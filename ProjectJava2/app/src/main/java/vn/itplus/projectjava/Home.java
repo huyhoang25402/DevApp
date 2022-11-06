@@ -8,6 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.models.SlideModel;
+
+import java.sql.Array;
+import java.util.ArrayList;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Home#newInstance} factory method to
@@ -23,6 +29,8 @@ public class Home extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    ImageSlider imageSlider;
 
     public Home() {
         // Required empty public constructor
@@ -59,6 +67,13 @@ public class Home extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        imageSlider = view.findViewById(R.id.image_slider);
+        ArrayList<SlideModel> imageList = new ArrayList<>();
+        imageList.add(new SlideModel(R.drawable.slide1, null));
+        imageList.add(new SlideModel(R.drawable.slide2, null));
+        imageList.add(new SlideModel(R.drawable.slide3, null));
+        imageSlider.setImageList(imageList);
+        return view;
     }
 }

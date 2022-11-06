@@ -68,6 +68,20 @@
             android:textSize="16dp" />
 
         <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:text="Lịch sử đơn hàng"
+            android:drawableLeft="@drawable/ic_package"
+            android:drawableRight="@drawable/ic_right"
+            android:drawablePadding="20dp"
+            android:background="@drawable/text_border"
+            android:textSize="16dp" />
+
+        <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

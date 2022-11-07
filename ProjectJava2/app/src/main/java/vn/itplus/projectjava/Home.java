@@ -4,15 +4,21 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
 
+import org.lucasr.twowayview.TwoWayView;
+
 import java.sql.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,6 +37,11 @@ public class Home extends Fragment {
     private String mParam2;
 
     ImageSlider imageSlider;
+    ArrayList<Category> list;
+    CategoryAdapter categoryAdapter;
+    TwoWayView  listView;
+
+
 
     public Home() {
         // Required empty public constructor
@@ -74,6 +85,17 @@ public class Home extends Fragment {
         imageList.add(new SlideModel(R.drawable.slide2, null));
         imageList.add(new SlideModel(R.drawable.slide3, null));
         imageSlider.setImageList(imageList);
+        listView = (TwoWayView) view.findViewById(R.id.listCategory);
+        list = new ArrayList<>();
+        list.add(new Category(R.drawable.cable,"Củ, cáp"));
+        list.add(new Category(R.drawable.headphone,"Tai nghe"));
+        list.add(new Category(R.drawable.phonecase,"Ốp lưng"));
+        list.add(new Category(R.drawable.screen,"Cường lực"));
+        list.add(new Category(R.drawable.power,"Sạc dự phòng"));
+        list.add(new Category(R.drawable.speaker,"Loa"));
+        Log.d( "onCreateView: ", String.valueOf(list));
+        categoryAdapter = new CategoryAdapter(getContext(), R.layout.layout_category, list);
+        listView.setAdapter(categoryAdapter);
         return view;
     }
 }

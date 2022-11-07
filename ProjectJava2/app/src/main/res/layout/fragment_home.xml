@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context=".Home">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -49,6 +49,26 @@
                 app:iss_auto_cycle="true"
                 app:iss_delay="0"
                 app:iss_period="1000" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="15dp"
+                android:text="Danh mục sản phẩm"
+                android:textStyle="bold"
+                android:textSize="16dp"/>
+
+            <org.lucasr.twowayview.TwoWayView
+                android:id="@+id/listCategory"
+                style="@style/TwoWayView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="horizontal" />
+
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

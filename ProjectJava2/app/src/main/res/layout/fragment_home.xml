@@ -34,7 +34,7 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:paddingStart="20dp"
-                    android:text="Tìm kiếm"
+                    android:hint="Tìm kiếm"
                     android:textSize="14dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:tag="fragment_login"
+    android:minWidth="300dp"
+    android:minHeight="450dp"
+    android:layout_gravity="center"
+    android:background="@color/red">
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="55dp"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:text="Xin chào" />
+
+    <EditText
+        android:id="@+id/etAccountLogin"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textView7"
+        android:background="@drawable/login_register_et"
+        android:drawableLeft="@drawable/ic_account"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Tên đăng nhập"
+        android:inputType="textPersonName"
+        android:paddingStart="10dp"
+        android:textSize="14dp" />
+
+    <EditText
+        android:id="@+id/etPasswordLogin"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/etAccountLogin"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/login_register_et"
+        android:drawableLeft="@drawable/ic_password"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Mật khẩu"
+        android:inputType="textPassword"
+        android:paddingStart="10dp"
+        android:textSize="14dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:id="@+id/btnLoginForm"
+        android:text="Đăng nhập"
+        android:textAllCaps="false"
+        android:background="@drawable/login_register_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/etPasswordLogin"
+        />
+
+</RelativeLayout>

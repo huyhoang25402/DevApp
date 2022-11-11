@@ -1,14 +1,22 @@
 package vn.itplus.projectjava;
 
-public class Category {
-    int image;
+public class Product {
+    int  price, image;
     String name;
 
-    public Category(int image, String name) {
+    public Product( int price, int image, String name) {
+        this.price = price;
         this.image = image;
         this.name = name;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
     public int getImage() {
         return image;
     }
@@ -27,8 +35,9 @@ public class Category {
 
     @Override
     public String toString() {
-        return "Category{" +
-                "image=" + image +
+        return "Product{" +
+                ", price=" + price +
+                ", image=" + image +
                 ", name='" + name + '\'' +
                 '}';
     }

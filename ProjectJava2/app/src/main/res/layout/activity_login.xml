@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity"
+    android:background="@color/red">
+
+
+    <ImageView
+        android:id="@+id/btnLoginBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:srcCompat="@drawable/ic_left" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:text="Xin chào" />
+
+    <EditText
+        android:id="@+id/etAccountLogin"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/login_register_et"
+        android:drawableLeft="@drawable/ic_account"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Tên đăng nhập"
+        android:inputType="textPersonName"
+        android:paddingStart="10dp"
+        android:textSize="14dp"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:id="@+id/etPasswordLogin"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/login_register_et"
+        android:drawableLeft="@drawable/ic_password"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Mật khẩu"
+        android:inputType="textPassword"
+        android:paddingStart="10dp"
+        android:textSize="14dp"
+        android:layout_gravity="center"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:id="@+id/btnLoginForm"
+        android:text="Đăng nhập"
+        android:textAllCaps="false"
+        android:background="@drawable/login_register_button"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="90dp"
+            android:textSize="14dp"
+            android:text="Chưa có tài khoản ?" />
+
+        <TextView
+            android:id="@+id/tvLoginToReg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:text="Đăng ký ngay !" />
+    </LinearLayout>
+</LinearLayout>

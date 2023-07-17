@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/CRUDProduct.js"></script>
+    <style>
+        img {
+            width: 150px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="text-align:center ;">Quản trị sản phẩm</h1>
+        <a href="UpdateAlert.html" class="btn btn-info">Thêm sản phẩm</a>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="table-success">
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Hình ảnh</th>
+                        <th>Chú thích</th>
+                        <th>Loại Sản phẩm</th>
+                        <th>Chức năng</th>
+                    </tr>
+                </thead>
+                <tbody id="tblbody">
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+<!-- <script>
+    const queryString = window.location.search;
+    // const urlParams = new URLSearchParams(queryString);
+    // console.log(urlParams.get("id"));
+
+    fetch("http://localhost:8080/product/get-by-category/" + urlParams.get("id"), {
+        mode: "no-cors",
+        method: "GET"
+
+    }).then((data) => {
+        return data.json();
+    }).then((objdata) => {
+        console.log(objdata);
+            document.getElementById("name").value = objdata.name;
+            document.getElementById("price").value = objdata.price;
+            document.getElementById("image").src = objdata.avatar;
+            document.getElementById("description").value = objdata.description;
+            document.getElementById("category").value = objdata.categoryid;
+            localStorage.setItem("imgName", objdata.avatar);
+
+    }).catch((error) => { console.log(error) });
+</script> -->
+<script>
+    function test(){
+    var SDT = document.getElementById("SDT").value;
+    var ODT = document.getElementById("ODT").value;
+    var TN = document.getElementById("TN").value;
+    var PDP = document.getElementById("PDP").value;
+    var CL = document.getElementById("CL").value;
+    console.log(ODN);
+    }
+    // fetch("http://localhost:8080/product/get-by-category/" + id).then((data) => {
+
+    //     return data.json();
+    // }).then((objdata) => {
+    //     console.log(objdata);
+    //     let tabledata = "";
+    //     objdata.map((values) => {
+    //         tabledata += `<tr>     
+    //                    <th>${values.id}</th>
+    //                  <th>${values.name}</th>
+    //                     <th>${values.price}</th>
+    //                      <th><img id='image' src="${values.avatar}" /></th>
+    //                     <th>${values.description}</th>
+    //                     <th>${values.categoryid}</th>
+    //                     <th>
+    //                      <a href="productEdit.html" type="button" class=" btn btn-success" >Sửa</a>
+    //                          <a type="button" onclick='deleteProduct(${values.id})'  class=" btn btn-danger">Xóa</a>
+    //                     </th></tr>`;
+
+    //     });
+
+    //     document.getElementById("tblbody").innerHTML = tabledata;
+    // }).catch((error) => { console.log(error) });
+
+</script>
+
+</html>

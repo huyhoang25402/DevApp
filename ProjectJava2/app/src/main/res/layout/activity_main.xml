@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Account">
+    tools:context=".MainActivity">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -19,17 +19,17 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName2"
-                    android:layout_width="0dp"
+                    android:id="@+id/etSearch"
+                    android:layout_width="310dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginRight="30dp"
                     android:background="@drawable/seach_background"
                     android:drawableLeft="@drawable/ic_search"
                     android:drawablePadding="10dp"
@@ -37,12 +37,28 @@
                     android:hint="Tìm kiếm"
                     android:inputType="textPersonName"
                     android:paddingStart="20dp"
-                    android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:textSize="14dp" />
+
+                <ImageView
+                    android:id="@+id/btnCartHome"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    app:srcCompat="@drawable/ic_cart" />
+
+                <TextView
+                    android:id="@+id/tvCartQtyHome"
+                    android:layout_width="23dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-10dp"
+                    android:background="@drawable/rounded_corner"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
 
             <com.denzcoskun.imageslider.ImageSlider
                 android:id="@+id/image_slider"
@@ -73,49 +89,25 @@
                 android:orientation="horizontal" />
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/tvProductNameTitile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginBottom="15dp"
-                android:text="Sản phẩm bán chạy"
+                android:text="Sản phẩm mới nhất"
+                android:textColor="@color/red"
                 android:textSize="18dp"
-                android:textStyle="bold"
-                android:textColor="@color/red"/>
+                android:textStyle="bold" />
 
             <ListView
-                android:id="@+id/lvBestSellerProduct"
+                android:id="@+id/lvOrderHistory"
                 style="@style/TwoWayView2"
                 android:layout_width="match_parent"
-                android:layout_height="410dp"
+                android:layout_height="500dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:nestedScrollingEnabled="true"
                 android:orientation="vertical" />
-
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginBottom="15dp"
-                android:text="Sản phẩm mới nhất"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                android:textColor="@color/red"/>
-
-            <ListView
-                android:id="@+id/lvNewestProduct"
-                style="@style/TwoWayView2"
-                android:layout_width="match_parent"
-                android:layout_height="410dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:nestedScrollingEnabled="true"
-                android:orientation="vertical">
-
-            </ListView>
 
             <ImageView
                 android:id="@+id/imageView4"

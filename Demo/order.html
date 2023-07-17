@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="data.js"></script> -->
+    <!-- <script src="js/CRUDProduct.js"></script> -->
+    <style>
+        #image {
+            width: 350px;
+            height: 300px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container col-xs-9">
+        <h1 style="text-align:center ;">Đơn hàng</h1>
+        <!-- <a href="uploadImage.php" class="btn btn-info"></a> -->
+        <a href="index.html" class="btn btn-success">Trang chủ</a>
+        <br>
+        <!-- <button type="button" class="btn btn-primary" id="toastbtn">Show Toast</button> -->
+        <table class="table table-bordered">
+            <thead class="table-success">
+                <tr>
+                    <th>ID</th>
+                    <!-- <th>Name</th>
+                    <th>Sản phẩm</th> -->
+                    <th>Số lượng</th>
+                    <th>Giá</th>
+                    <th>Số điện thoại</th>
+                    <th>Địa chỉ</th>
+                    <th>ID người dùng</th>
+                    <th>Ngày đặt</th>
+                    <th>Trạng thái</th>
+                    <th>Chức năng</th>
+                </tr>
+            </thead>
+            <tbody id="tblOrder">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+<script>
+
+    fetch("http://localhost:8080/order/get-all-desc").then((data) => {
+
+        return data.json();
+    }).then((objdata) => {
+        console.log(objdata);
+        let tabledata = "";
+        let status = "";
+        objdata.map((values) => {
+            if (values.status == 1){
+                status = "Chưa giao hàng";
+            }else if (values.status == 2){
+                status = "Đã giao hàng";
+            }
+            if (values.status == 1){
+                tabledata += `<tr>     
+                            <th width="5%">${values.id}</th>
+                            <th width="5%">${values.amount}</th>
+                            <th width="5%">${values.price}</th>
+                            <th>${values.phonenumber}</th>
+                            <th>${values.address}</th>
+                            <th width="5%">${values.userId}</th>
+                            <th>${values.orderTime}
+                            <th>${status}</th>
+                            <th>
+                                <a onclick="update(${values.id})" type="button" class="not-update btn btn-success" >Cập nhật trạng thái</a>
+                                <a href="orderDetailById.html?id=${values.id}" type="button" class=" btn btn-primary" >Chi tiết</a>
+                            </th>
+                          </tr>`;
+            }else if (values.status == 2){
+                tabledata += `<tr>     
+                            <th width="5%">${values.id}</th>
+                            <th width="5%">${values.amount}</th>
+                            <th width="5%">${values.price}</th>
+                            <th>${values.phonenumber}</th>
+                            <th>${values.address}</th>
+                            <th width="5%">${values.userId}</th>
+                            <th>${values.orderTime}
+                            <th>${status}</th>
+                            <th>
+                                <a href="orderDetailById.html?id=${values.id}" type="button" class=" btn btn-primary" >Chi tiết</a>
+                            </th>
+                          </tr>`;
+            }
+
+
+        });
+        document.getElementById("tblOrder").innerHTML = tabledata;
+    }).catch((error) => { console.log(error) });
+
+    function update(id){
+
+        fetch("http://localhost:8080/order/get-by-id/" + id).then((order) =>{
+            return order.json();
+        }).then(orderData => {
+            console.log(orderData);
+            let data = {
+                'amount': orderData.amount,
+                'price': orderData.price,
+                'phonenumber': orderData.phonenumber.toString(),
+                'address': orderData.address,
+                'userId': orderData.userId,
+                'orderTime': orderData.orderTime,
+                'status': 2,
+            };
+            return fetch("http://localhost:8080/order/updateStatus/" + id, { 
+            method: "post",
+                body: JSON.stringify(data),
+                headers: {
+                    "content-type": "application/json"
+                },
+                
+            }).then(response => response.json)
+            .then(success => console.log(success))
+            .then(response => location.reload());
+        });
+        
+
+    }
+    
+
+</script>
+
+</html>

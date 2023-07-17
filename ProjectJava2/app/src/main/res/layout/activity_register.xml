@@ -27,10 +27,25 @@
         android:layout_gravity="center"/>
 
     <EditText
-        android:id="@+id/etAccountReg"
+        android:id="@+id/etNameReg"
         android:layout_width="250dp"
         android:layout_height="35dp"
         android:layout_marginTop="55dp"
+        android:background="@drawable/login_register_et"
+        android:drawableLeft="@drawable/ic_account"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Họ và tên"
+        android:inputType="textPersonName"
+        android:paddingStart="10dp"
+        android:textSize="14dp"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:id="@+id/etAccountReg"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/login_register_et"
         android:drawableLeft="@drawable/ic_account"
         android:drawablePadding="10dp"
